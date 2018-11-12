@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "-----------------------------------------------------------------"
+echo "|                         CRIPTOGRAFIA        #RAFFAEL           |"
+echo "|                         DESCRIPTOGRAFIA     #BRUNNO            |"
+echo "-----------------------------------------------------------------"
+echo ""
+echo "Digite a letra A para Criptografar o arquivo:"
+echo "Digite a letra B para Descriptografar o arquivo:"
+read letra; 
+echo "------------------------------------------------------------------"
+
+if [ "$letra" == "A" ]; then
+echo "Por favor, para prosseguir digite o nome do arquivo e sua extenção! "
+read file;
+gpg -c $file
+rm -rf $file
+echo "O seu arquivo foi Criptografado com sucesso!"
+fi
+        if [ "$letra" == "B" ]; then
+                echo "Por favor, digite o nome do arquivo e sua extenção"
+                read file;
+                gpg -d $file > ArquivoDescriptografado.txt
+                rm -rf $file
+                echo "O arquivo foi Descriptografado com sucesso!"
+fi
