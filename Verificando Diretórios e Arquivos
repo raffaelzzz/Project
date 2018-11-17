@@ -1,0 +1,12 @@
+#!/bin/bash
+
+for item in /root/Desktop/* #Todos os arquivos que estiver no diretório Desktop
+do  # faça
+if [ -d "$item" ] #Se o arquivo item exite e tem permissão de escrita
+then #Então
+echo "O item $item é um Diretório"
+elif [ -f "$item" ]
+then
+echo "O item $item é um arquivo"
+fi #fim da estrutura de condição
+done #Feito
