@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cont=1
+
+while [$cont -le 10]
+do # faça
+echo "O número é $cont" #Exibe a quantidade de número que está passando até chegar no 10
+cont=$[#cont+1] # Cada passagem soma mais 1
+done #Feito
