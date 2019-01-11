@@ -32,6 +32,6 @@ try:
     server.close() #Não vamos deixar identado o close no While se não ele fecha
 
 
-except Exception as erro:
+except Exception as erro: # O except é praticamente o Senão, utilizamos o Exception as erro pra mostrar qual erro esta aparecendo depois printamos esse erro
     print str(erro)
-    server.close()
+    server.close() #Serve pra fechar a conexão
