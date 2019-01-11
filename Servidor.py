@@ -15,18 +15,21 @@ try:
 
     print "Listening in " + ip + " port: " + str(port) #Quando der certo acima, vamos printar que ele esta escultando na porta
 
-    (client_socket, address) = server.accept() #
+    (client_socket, address) = server.accept() # Vamos aceitar a conexão, quando aceitamos ele mostra 2 resultados
+    #(<socket._socketobject object at 0x7f5d3d47dad0>, ('127.0.0.1', 47124))
+    # O primeiro seria o Client Socket o segundo a porta
+   
 
-    print "Received from: " + str(address[0])
+    print "Received from: " + str(address[0]) # Quando der certo no Accept ele vai printar quem se conectar na porta mostrando o IP da pessoa 
 
-    while True:
+    while True: # Vamos criar uma estrutura de repetição, para que não feche a conexão após a primeira mensagem
 
-        data = client_socket.recv(1024)
-        print (data)
-        client_socket.send("Enviar: ")
+        data = client_socket.recv(1024) # Aqui estamos falando que o client socket vai receber dados, mesgagem no caso
+        print (data) # vamos mostrar o que recebeu
+        client_socket.send("Enviar: ") # E não vamos apenas receber dado, e sim enviar também
 
 
-    server.close()
+    server.close() #Não vamos deixar identado o close no While se não ele fecha
 
 
 except Exception as erro:
