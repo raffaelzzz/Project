@@ -4,7 +4,7 @@ import socket
 
 
 web = raw_input("Por favor, informe o site que deseja escanear: ")
-ports = [21, 22, 80,3306] #Definindo as portas mais importante
+ports = [80, 21, 22, 443, 8080, 25, 135, 3306] # Defindo as principais portas
 
 for port in ports:
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -13,3 +13,5 @@ for port in ports:
 
     if resultado == 0:
         print str(port) + " --> Open port"
+    else:
+        print str(port) + "--> Closed port"
