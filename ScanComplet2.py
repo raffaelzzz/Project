@@ -4,7 +4,7 @@ import socket
 
 
 web = raw_input("Por favor, informe o site que deseja escanear: ")
-ports = [21, 22, 80,3306]
+ports = [21, 22, 80,3306] #Definindo as portas mais importante
 
 for port in ports:
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
