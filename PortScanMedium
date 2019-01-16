@@ -1,0 +1,17 @@
+# *-* coding: utf-8 *-*
+
+import socket
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+client.settimeout(0.6)
+
+web = raw_input("Por favor, digite o site: ")
+port = int(raw_input("Por favor, informe a porta: "))
+
+code = client.connect_ex((web, port)) # Ele vai se connectar e vai avisar de deu erro ou não!
+
+if code == 0:
+    print "Port open"
+else:
+    print "Port closed"
