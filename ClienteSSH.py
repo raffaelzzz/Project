@@ -16,7 +16,7 @@ client.set_missing_host_key_policy(paramiko.AutoAddPolicy()) #Politica de chave,
 
   client.connect(host, username=user, password=passwd) # vamos nos conectar nas seguintes variaveis onde foi informada acima.
 
-while true:
+while true: #Vou pedir para que sempre execute um comando no prompt
   
   commander = raw_input("Comando: ")
   
