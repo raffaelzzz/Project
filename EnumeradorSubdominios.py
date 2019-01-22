@@ -1,9 +1,32 @@
-import dns.resolver #Ele já traz dentro dele a palrte low level/requisição na parte da rede dele. Baixo nível
 
-resultados = dns.resolver.query('www.mangaking.com.br', 'a') # Estamos fazendo uma requisição, colocamos o site e o tipo 
 
-for resultado in resultados:
-    print resultado
+
+#!/bin/usr/python
+#-*- coding:utf-8 -*-
+import dns.resolver
+import sys
+
+try:
+
+    arquivo = open('dns_wordlist.txt')
+    subdominios = arquivo.read().splitlines()
+
+except:
+
+    print "Arquivo não encontrado"
+    sys.exit()
+
+dominio = raw_input("Por favor, digite o dominio: ")
+
+for subdominio in subdominios:
+    
+    try:
+        domesub = subdominio + '-' + dominio
+        resultados = dns.resolver.query(domesub, 'a')
+        for resultado in resultados:    
+            print domesub, resultado
+    except:
+        pass
 
 
 
