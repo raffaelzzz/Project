@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for palavra in $(cat /root/Desktop/dns_program/dnscan/subdomains.txt)
+do
+
+resposta=$(curl -s -o /dev/null/ -w "%{http_code}" $1/$palavra/)
+
+if [ $resposta == "200" ]
+then
+echo "Diretorio: $palavra"
+fi
+done
+
