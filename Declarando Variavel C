@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main()
+
+{
+
+int idade, ano, total;
+
+
+idade = 1998;
+ano = 2019;
+
+total = ano - idade;
+
+
+
+printf("Sua idade é: %d", total);
+
+return 0;
+
+}
