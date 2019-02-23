@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+
+    int num1, num2, soma, pergunta;
+
+    printf("Por favor, digite 1 para potencializar e 2 para somar: ");
+    scanf("%d",&pergunta);
+
+
+    if (pergunta == 1){
+
+    printf("\nPor favor, digite o primeiro numero: ");
+    scanf("%d", &num1);
+
+
+    soma = pow(num1,2);
+
+    printf("\nResultado: %d", soma);
+    printf("\n");
+
+
+    }
+
+    else {
+
+
+
+    if (pergunta == 2){
+
+
+    printf("Por favor, digite o primeiro numero: ");
+    scanf("%d", &num1);
+
+
+    printf("Por favor, digite o segundo numero: ");
+    scanf("%d", &num2);
+
+    soma = num1 + num2;
+
+    printf("O resultado foi de: %d", soma);
+
+
+
+    }
+
+    else {
+
+
+    printf("Por favor, digite um número válido! ");
+
+
+    }
+
+
+
+    }
+
+
+
+    return 0;
+}
