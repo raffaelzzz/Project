@@ -1,2 +1,3 @@
-# Project
-Meus projetos 
+# Projetos
+
+Meus projetos para fins educacionais.
