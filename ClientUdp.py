@@ -1,26 +1,35 @@
+##############################################
+#                                            #
+#               AUTOR:RAFFAEL BRUNNO         #
+#               DATA: 24.12.2020             #
+#               PROGRAMA: SERVIDOR DE CHAT   #
+#                                            #   
+##############################################
+
 # -*- coding: utf-8 -*-
+
+
 
 import socket
 
 client_udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #//CRIANDO O SOCKET UDP E UTILIZANDO O IPV4
 
 
-try: #// então
+try: #//BLOCO DE CÓDIGO
 
 
-    while True: #QUANDO FOR VERDADE, OU SEJA, O CHAT NÃO VAI FECHAR SEMPRE VAI FICAR ABERTO LOOP INFINITO
-        client_udp.sendto(raw_input("Digite sua mensagem: "), ("127.0.0.1", 123)) #//ESTAMOS ENVIANDO UMA MENSAGEM, RESPEITANDO 
-        #TUPLA
+    while True: #QUANDO FOR VERDADE, OU SEJA, O CHAT SEMPRE VAI FICAR ABERTO - LOOP INFINITO
+        client_udp.sendto(raw_input("Digite sua mensagem: "), ("127.0.0.1", 123)) #//ESTAMOS ENVIANDO UMA MENSAGEM PARA O SERVIDOR 127.0.0.1 NA PORTA 123
         
-        msg, IP = client_udp.recvfrom(1024)# // DIVIDIMOS A SAIDA O PROGRAMA, A MENSAGEM VAI SER A MENSGAGEM E O IP VAI SER O IP DO HOST 
+        msg, IP = client_udp.recvfrom(1024)# // DIVIDINDO A SAIDA DO PROGRAMA (MSG & IP)
 
-        print "Mensagem: " + msg + "Amigo: " + IP[0] + "\n"#//ESTAMOS PRINTANDO NA TELA CADA UM DELES E TAMBÉM UTILIZAMOS O INDICE
+        print "Mensagem: " + msg + "Amigo: " + IP[0] + "\n"#//PRINTANDO NA TELA AS MENSAGENS TROCADAS
+        
+    client_udp.close() # QUANDO O PROGRAMA FINALIZAR, O MESMO IRA FECHAR AUTOMATICAMENTE
 
-    client_udp.close() # QUANDO O PROGRAMA FINALIZA, ELE FECHA
 
-
-except Exception as erro: #AQUI ELE VAI MOSTRAR O ERRO QUE ESTA OCORRENSDO NO PROGRAMA
+except Exception as erro: #AQUI ELE VAI MOSTRAR O ERRO QUE ESTA OCORRENDO NO PROGRAMA
     print erro
-    print "Conexão não estabelecida" #MENSAGEM QUANDO O PROGRAMA NÃO CONSEGUE SE CONECTAR OU DEU PAL
+    print "Conexão não estabelecida" #MENSAGEM QUANDO O PROGRAMA NÃO CONSEGUE SE CONECTAR
 
     client_udp.close()
